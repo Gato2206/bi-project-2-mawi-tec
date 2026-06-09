@@ -147,36 +147,18 @@ El modelo fue diseñado bajo un esquema estrella compuesto por:
 ```text
 Proyecto_Mawi_BI/
 
-│
+Proyecto_Mawi_BI/
+
 ├── README.md
-│
 ├── data/
 │   ├── raw/
 │   └── processed/
-│
 ├── etl/
-│   ├── transform_etl.py
-│   ├── extract_chartmogul.py
-│   ├── extract_hubspot.py
-│   └── extract_posthog.py
-│
 ├── docs/
-│   ├── diccionario_dimensional.pdf
-│   ├── transformation_mapping.xlsx
-│   └── logs_etl.txt
-│
 ├── dashboard/
-│   └── mawi.pbix
-│
 ├── informe/
-│   └── Informe_Final.pdf
-│
 ├── presentacion/
-│   └── Presentacion_Final.pptx
-│
 └── evidencia/
-    └── requerimientos.pdf
-```
 
 ---
 
@@ -196,13 +178,9 @@ pip install pandas numpy requests
 
 ### 3. Configurar variables de entorno
 
-Crear un archivo:
-
 ```text
 .env
 ```
-
-Con las credenciales necesarias para acceder a las APIs.
 
 ### 4. Ejecutar extracción
 
