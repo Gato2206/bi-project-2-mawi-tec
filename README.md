@@ -151,16 +151,46 @@ El modelo fue diseñado bajo un esquema estrella compuesto por:
 Proyecto_Mawi_BI/
 
 ├── README.md
-├── raw/
-├── processed/
-├── scripts/
+│
+├── ETL/
+│   ├── transform_etl.py
+│   ├── extract_chartmogul.py
+│   ├── extract_hubspot.py
+│   ├── extract_posthog.py
+│   ├── config.py
+│   └── .env.example
+│
+├── data/
+│   ├── raw/
+│   │   ├── chartmogul.json
+│   │   ├── hubspot.json
+│   │   └── posthog.json
+│   │
+│   └── processed/
+│       ├── dim_cliente.csv
+│       ├── dim_tiempo.csv
+│       ├── dim_pais.csv
+│       ├── dim_estado_cliente.csv
+│       ├── dim_pipeline.csv
+│       ├── dim_evento.csv
+│       ├── dim_empresa.csv
+│       ├── fact_retencion.csv
+│       ├── fact_pipeline.csv
+│       └── fact_uso_producto.csv
+│
 ├── docs/
-├── logs/
-├── transform_etl.py
+│   ├── Diccionario_Dimensional.pdf
+│   ├── transformation_mapping.xlsx
+│   └── logs_etl.txt
+│
 ├── dashboard/
-├── informe/
-├── presentacion/
-└── evidencia/
+│   └── Mawi.pbix
+│
+├──Informe_Final.pdf
+│
+├── MawiPresentacion2026.pdf
+│
+└── Evidencia de levantamiento de requerimientos
 
 ---
 
