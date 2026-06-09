@@ -1,0 +1,9 @@
+﻿campo_destino,campo_origen,regla_aplicada,comentarios
+dim_cliente.email,ChartMogul.email,Normalización a minúscula y eliminación de espacios,Permite homologar correos
+dim_cliente.es_cliente_pago,ChartMogul.mrr,"Si MRR > 0 entonces 1, si no 0",Clasificación de cliente de pago
+dim_cliente.es_churn,ChartMogul.status,Si status = Cancelled entonces 1,Identificación de clientes cancelados
+fact_retention.riesgo_churn,ChartMogul.status,"Past Due = Alto, Cancelled = Churned, Active = Bajo",Regla de clasificación de riesgo
+dim_tiempo,"Fechas de HubSpot, ChartMogul y PostHog","Derivación de año, mes, trimestre, semana y año-mes",Dimensión obligatoria del modelo
+llaves subrogadas,IDs naturales de APIs,Generación secuencial de SK para dimensiones,Requisito dimensional
+fact_pipeline.flag_tiene_monto,HubSpot.amount,"Si amount > 0 entonces 1, si no 0",Validación de deals con monto
+fact_product_usage.cantidad_eventos,PostHog.events,"Agrupación por fecha, evento y usuario",Resumen de actividad del producto

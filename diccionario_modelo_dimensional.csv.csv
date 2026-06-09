@@ -1,0 +1,48 @@
+﻿tabla,campo,tipo,descripcion,origen,regla
+dim_cliente,sk_cliente,int,Llave subrogada del cliente,ETL,Generada secuencialmente
+dim_cliente,cliente_id_natural,text,ID natural del cliente,ChartMogul.uuid,Limpieza de texto
+dim_cliente,email,text,Correo del cliente,ChartMogul.email,Lowercase y trim
+dim_cliente,nombre_cliente,text,Nombre del cliente,ChartMogul.name,Limpieza de texto
+dim_cliente,pais_codigo,text,Código de país,ChartMogul.country,Limpieza de texto
+dim_cliente,estado_cliente,text,Estado del cliente,ChartMogul.status,Limpieza de texto
+dim_cliente,mrr,float,Monthly Recurring Revenue,ChartMogul.mrr,Conversión numérica
+dim_cliente,arr,float,Annual Recurring Revenue,ChartMogul.arr,Conversión numérica
+dim_cliente,es_cliente_pago,int,Indica si el cliente tiene MRR mayor a cero,ChartMogul.mrr,Si MRR > 0 entonces 1
+dim_cliente,es_activo,int,Indica si el cliente está activo,ChartMogul.status,Si status = Active entonces 1
+dim_cliente,es_churn,int,Indica si el cliente canceló,ChartMogul.status,Si status = Cancelled entonces 1
+dim_empresa,sk_empresa,int,Llave subrogada de empresa,ETL,Generada secuencialmente
+dim_empresa,nombre_empresa,text,Nombre de la empresa,HubSpot Companies.name,Limpieza de texto
+dim_empresa,dominio,text,Dominio web de empresa,HubSpot Companies.domain,Limpieza de texto
+dim_pais,sk_pais,int,Llave subrogada del país,ETL,Generada secuencialmente
+dim_pais,pais_codigo,text,Código de país,ChartMogul.country,Valores únicos
+dim_estado_cliente,sk_estado_cliente,int,Llave subrogada del estado cliente,ETL,Generada secuencialmente
+dim_estado_cliente,estado_cliente,text,Estado del cliente,ChartMogul.status,Valores únicos
+dim_pipeline,sk_pipeline,int,Llave subrogada del pipeline,ETL,Generada secuencialmente
+dim_pipeline,pipeline,text,Pipeline comercial,HubSpot Deals.pipeline,Limpieza de texto
+dim_pipeline,dealstage,text,Etapa del deal,HubSpot Deals.dealstage,Limpieza de texto
+dim_evento,sk_evento,int,Llave subrogada del evento,ETL,Generada secuencialmente
+dim_evento,evento,text,Nombre del evento,PostHog.event,Valores únicos
+dim_tiempo,sk_tiempo,int,Llave subrogada de tiempo,ETL,Generada secuencialmente
+dim_tiempo,fecha,date,Fecha calendario,HubSpot/ChartMogul/PostHog,Consolidación de fechas
+dim_tiempo,anio,int,Año,Fecha,Derivado
+dim_tiempo,mes,int,Mes,Fecha,Derivado
+dim_tiempo,trimestre,int,Trimestre,Fecha,Derivado
+dim_tiempo,anio_mes,text,Año y mes,Fecha,Derivado
+fact_retention,sk_cliente,int,Llave cliente,dim_cliente,Relación dimensional
+fact_retention,sk_pais,int,Llave país,dim_pais,Relación dimensional
+fact_retention,sk_estado_cliente,int,Llave estado cliente,dim_estado_cliente,Relación dimensional
+fact_retention,mrr,float,Monthly Recurring Revenue,ChartMogul.mrr,Conversión numérica
+fact_retention,arr,float,Annual Recurring Revenue,ChartMogul.arr,Conversión numérica
+fact_retention,flag_activo,int,Cliente activo,ChartMogul.status,Active = 1
+fact_retention,flag_cancelado,int,Cliente cancelado,ChartMogul.status,Cancelled = 1
+fact_retention,riesgo_churn,text,Riesgo de churn,ChartMogul.status,Past Due = Alto, Cancelled = Churned, Active = Bajo
+fact_pipeline,deal_id,text,ID del deal,HubSpot Deals.id,Limpieza de texto
+fact_pipeline,sk_pipeline,int,Llave pipeline,dim_pipeline,Relación dimensional
+fact_pipeline,amount,float,Monto del deal,HubSpot Deals.amount,Conversión numérica
+fact_pipeline,cantidad_deal,int,Conteo de deals,ETL,Valor fijo 1
+fact_pipeline,days_to_close,float,Días para cerrar el deal,HubSpot Deals.days_to_close,Conversión numérica
+fact_pipeline,flag_tiene_monto,int,Indica si el deal tiene monto,HubSpot Deals.amount,Si amount > 0 entonces 1
+fact_product_usage,sk_tiempo,int,Llave tiempo,dim_tiempo,Relación dimensional
+fact_product_usage,sk_evento,int,Llave evento,dim_evento,Relación dimensional
+fact_product_usage,distinct_id,text,Identificador de usuario/evento,PostHog.distinct_id,Limpieza de texto
+fact_product_usage,cantidad_eventos,int,Cantidad de eventos,PostHog.events,Agrupación por fecha evento y usuario

@@ -1,0 +1,294 @@
+name,label,type,fieldType
+about_us,About Us,string,text
+address,Street Address,string,text
+address2,Street Address 2,string,text
+adoption_start_date,Adoption Start Date,datetime,date
+aircall_last_sms_at,Last Aircall SMS timestamp,datetime,date
+aircall_last_sms_direction,Last Aircall SMS direction,string,text
+annualrevenue,Annual Revenue,number,number
+chartmogul_arr,ChartMogul ARR,number,number
+chartmogul_billing_cycles,ChartMogul Billing Cycles,string,text
+chartmogul_customer_record_link,ChartMogul Customer Record Link,string,text
+chartmogul_customer_status,ChartMogul Customer Status,string,text
+chartmogul_external_ids,ChartMogul External IDs,string,text
+chartmogul_lead_created_at,ChartMogul Lead created at,datetime,date
+chartmogul_mrr,ChartMogul MRR,number,number
+chartmogul_net_payments,ChartMogul Net Payments,number,number
+chartmogul_plans,ChartMogul Plans,string,text
+chartmogul_subscriber_since,ChartMogul Subscriber Since,datetime,date
+chartmogul_trial_started_at,ChartMogul Trial started at,datetime,date
+churned,Churned,enumeration,booleancheckbox
+churned_date,Churned Date,date,date
+churned_type,Churned type,enumeration,select
+churnedreason,Churned reason,string,text
+city,City,string,text
+closedate,Close Date,datetime,date
+country,Country/Region,string,text
+createdate,Create Date,datetime,date
+cs_segment,CS Segment,enumeration,select
+cs_start_date,CS Start Date,datetime,date
+customer_onboarding1,Customer_Onboarding,enumeration,select
+customer_success_manager_assigned,CSM Asignado,enumeration,select
+days_to_close,Days to Close,number,calculation_equation
+description,Description,string,textarea
+domain,Company Domain Name,string,text
+engagements_last_meeting_booked,Date of last meeting booked in meetings tool,datetime,date
+engagements_last_meeting_booked_campaign,Campaign of last booking in meetings tool,string,text
+engagements_last_meeting_booked_medium,Medium of last booking in meetings tool,string,text
+engagements_last_meeting_booked_source,Source of last booking in meetings tool,string,text
+etapa_en_cs,Etapa en CS,enumeration,select
+facebook_company_page,Facebook Company Page,string,text
+facebookfans,Facebook Fans,number,number
+first_contact_createdate,First Contact Create Date,datetime,date
+first_contact_createdate_timestamp_earliest_value_78b50eea,first_contact_createdate_timestamp_earliest_value_78b50eea,datetime,text
+first_conversion_date,First Conversion Date,datetime,date
+first_conversion_event_name,First Conversion,string,text
+first_deal_created_date,First Deal Created Date,datetime,date
+founded_year,Year Founded,string,text
+googleplus_page,Google Plus Page,string,text
+hs_additional_domains,Additional Domains,enumeration,checkbox
+hs_all_accessible_team_ids,All teams,enumeration,select
+hs_all_assigned_business_unit_ids,Brands,enumeration,checkbox
+hs_all_owner_ids,All owner IDs,enumeration,select
+hs_all_team_ids,All team IDs,enumeration,select
+hs_analytics_first_timestamp,Time First Seen,datetime,date
+hs_analytics_first_touch_converting_campaign,First Touch Converting Campaign,string,text
+hs_analytics_first_visit_timestamp,Time of First Session,datetime,date
+hs_analytics_last_timestamp,Time Last Seen,datetime,date
+hs_analytics_last_timestamp_timestamp_latest_value_4e16365a,hs_analytics_last_timestamp_timestamp_latest_value_4e16365a,datetime,text
+hs_analytics_last_touch_converting_campaign,Last Touch Converting Campaign,string,text
+hs_analytics_last_touch_converting_campaign_timestamp_latest_value_81a64e30,hs_analytics_last_touch_converting_campaign_timestamp_latest_value_81a64e30,datetime,text
+hs_analytics_last_visit_timestamp,Time of Last Session,datetime,date
+hs_analytics_last_visit_timestamp_timestamp_latest_value_999a0fce,hs_analytics_last_visit_timestamp_timestamp_latest_value_999a0fce,datetime,text
+hs_analytics_latest_source,Latest Traffic Source,enumeration,select
+hs_analytics_latest_source_data_1,Latest Traffic Source Data 1,string,text
+hs_analytics_latest_source_data_2,Latest Traffic Source Data 2,string,text
+hs_analytics_latest_source_timestamp,Latest Traffic Source Timestamp,datetime,date
+hs_analytics_num_page_views,Number of Pageviews,number,number
+hs_analytics_num_page_views_cardinality_sum_e46e85b0,hs_analytics_num_page_views_cardinality_sum_e46e85b0,number,text
+hs_analytics_num_visits,Number of Sessions,number,number
+hs_analytics_num_visits_cardinality_sum_53d952a6,hs_analytics_num_visits_cardinality_sum_53d952a6,number,text
+hs_analytics_source,Original Traffic Source,enumeration,select
+hs_analytics_source_data_1,Original Traffic Source Drill-Down 1,string,text
+hs_analytics_source_data_2,Original Traffic Source Drill-Down 2,string,text
+hs_annual_revenue_currency_code,Annual Revenue Currency Code,string,calculation_equation
+hs_avatar_filemanager_key,Avatar FileManager key,string,text
+hs_calculated_phone_number,Calculated Phone Number in International Format,string,phonenumber
+hs_count_intent_signals_created_last_14_days,Count Intent Signals Created Last 14 Days,number,number
+hs_count_intent_signals_created_last_30_days,Count Intent Signals Created Last 30 Days,number,number
+hs_count_intent_signals_created_last_7_days,Count Intent Signals Created Last 7 Days,number,number
+hs_country_code,Country/Region Code,string,text
+hs_created_by_user_id,Created by user ID,number,number
+hs_createdate,Object create date/time,datetime,date
+hs_csm_sentiment,CSM Sentiment,enumeration,select
+hs_current_customer,Current Customer,enumeration,select
+hs_customer_success_ticket_sentiment,Recent Ticket Sentiment,number,number
+hs_date_entered_customer,Date entered 'Cliente (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_entered_evangelist,Date entered 'Evangelizador (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_entered_lead,Date entered 'Lead (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_entered_marketingqualifiedlead,Date entered 'MQL (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_entered_opportunity,Date entered 'Oportunidad (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_entered_other,Date entered 'Otra (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_entered_salesqualifiedlead,Date entered 'SQL (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_entered_subscriber,Date entered 'Suscriptor (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_exited_customer,Date exited 'Cliente (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_exited_evangelist,Date exited 'Evangelizador (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_exited_lead,Date exited 'Lead (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_exited_marketingqualifiedlead,Date exited 'MQL (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_exited_opportunity,Date exited 'Oportunidad (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_exited_other,Date exited 'Otra (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_exited_salesqualifiedlead,Date exited 'SQL (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_date_exited_subscriber,Date exited 'Suscriptor (Lifecycle Stage Pipeline)',datetime,calculation_read_time
+hs_employee_range,Employee range,string,text
+hs_excluded_from_cross_account_data_mirroring,Excluded from cross-account data mirroring,bool,booleancheckbox
+hs_geohash_1,geohash_1,string,text
+hs_geohash_2,geohash_2,string,text
+hs_geohash_3,geohash_3,string,text
+hs_geohash_4,geohash_4,string,text
+hs_geohash_5,geohash_5,string,text
+hs_geohash_6,geohash_6,string,text
+hs_gps_error,GPS Error,string,text
+hs_gps_latitude,Latitudes,string,text
+hs_gps_longitude,Longitudes,string,text
+hs_ideal_customer_profile,Ideal Customer Profile Tier,enumeration,radio
+hs_industry_group,Industry group,string,text
+hs_inferred_domain,Inferred Domain,string,text
+hs_intent_page_views_last_30_days,Tracked Page Views (Last 30 Days),number,number
+hs_intent_paid_up_to_date,Intent paid up to date,date,date
+hs_intent_signals_enabled,Intent Signals active,bool,booleancheckbox
+hs_intent_visitors_last_30_days,Tracked Visitors (Last 30 Days),number,number
+hs_is_enriched,Has been enriched,bool,booleancheckbox
+hs_is_intent_monitored,Is Intent Monitored,bool,booleancheckbox
+hs_is_target_account,Target Account,bool,booleancheckbox
+hs_keywords,Company Keywords,enumeration,checkbox
+hs_last_booked_meeting_date,Last Booked Meeting Date,datetime,date
+hs_last_logged_call_date,Last Logged Call Date,datetime,date
+hs_last_logged_outgoing_email_date,Last Logged Outgoing Email Date,datetime,calculation_rollup
+hs_last_metered_enrichment_timestamp,Last Metered Enrichment Timestamp,datetime,date
+hs_last_open_task_date,Last Open Task Date,datetime,date
+hs_last_sales_activity_date,last sales activity date old,datetime,date
+hs_last_sales_activity_timestamp,Last Engagement Date,datetime,date
+hs_last_sales_activity_type,Last Engagement Type,enumeration,select
+hs_lastmodifieddate,Last Modified Date,datetime,date
+hs_latest_createdate_of_active_subscriptions,Latest create date of active subscriptions,datetime,calculation_rollup
+hs_latest_intent_signal_occurred_at,Latest Intent Signal Occurred At,datetime,date
+hs_latest_intent_signal_timestamp,Latest Intent Signal Timestamp,number,number
+hs_latest_meeting_activity,Latest meeting activity,datetime,date
+hs_latest_prospecting_agent_monitoring_date,Latest prospecting agent monitoring date,number,calculation_rollup
+hs_latest_suggested_contact_timestamp,Latest Suggested Contact Timestamp,number,number
+hs_latitude,Latitude,number,number
+hs_lead_status,Lead Status,enumeration,radio
+hs_linkedin_handle,Linkedin handle,string,text
+hs_live_enrichment_deadline,Live enrichment deadline,datetime,date
+hs_logo_url,Logo URL,string,text
+hs_longitude,Longitude,number,number
+hs_max_recommendation_score,Max recommendation score,number,calculation_rollup
+hs_merged_object_ids,Merged Company IDs,enumeration,checkbox
+hs_most_recent_de_anonymized_visit,Last Tracked Visit Time,datetime,date
+hs_notes_last_activity,Last Activity,object_coordinates,text
+hs_notes_next_activity,Next Activity,object_coordinates,text
+hs_notes_next_activity_type,Next Activity Type,enumeration,select
+hs_num_blockers,Number of blockers,number,number
+hs_num_child_companies,Number of child companies,number,number
+hs_num_contacts_with_buying_roles,Number of contacts with a buying role,number,number
+hs_num_decision_makers,Number of decision makers,number,number
+hs_num_open_deals,Number of open deals,number,number
+hs_object_id,Record ID,number,number
+hs_object_source,Record creation source,string,text
+hs_object_source_detail_1,Record source detail 1,string,text
+hs_object_source_detail_2,Record source detail 2,string,text
+hs_object_source_detail_3,Record source detail 3,string,text
+hs_object_source_id,Record creation source ID,string,text
+hs_object_source_label,Record source,enumeration,select
+hs_object_source_user_id,Record creation source user ID,number,number
+hs_owning_teams,Owning Teams,enumeration,checkbox
+hs_paid_for_intent_signals,Paid for Intent Signals,bool,booleancheckbox
+hs_parent_company_id,Parent Company,number,number
+hs_pinned_engagement_id,Pinned Engagement ID,number,number
+hs_pipeline,Pipeline,enumeration,select
+hs_plays,Plays,enumeration,calculation_rollup
+hs_predictivecontactscore_v2,Likelihood to close,number,number
+hs_predictivecontactscore_v2_next_max_max_d4e58c1e,hs_predictivecontactscore_v2_next_max_max_d4e58c1e,number,text
+hs_quick_context,Quick context,string,html
+hs_read_only,Read only object,bool,booleancheckbox
+hs_reason_to_reach_out,Reason To Reach Out,string,textarea
+hs_recent_intent_signals,Recent Intent Signals,enumeration,checkbox
+hs_research_agent_execution_id,Research Agent Execution Id,string,text
+hs_research_agent_id,Research Agent Id,number,number
+hs_revenue_range,Revenue range,string,text
+hs_sales_email_last_replied,Recent Sales Email Replied Date,datetime,date
+hs_searchable_calculated_international_phone_number,Calculated Phone Number with country code,string,phonenumber
+hs_searchable_calculated_phone_number,Calculated Phone Number without country code,string,phonenumber
+hs_shared_team_ids,Shared teams,enumeration,checkbox
+hs_shared_user_ids,Shared users,enumeration,checkbox
+hs_signals_summary,Signals Summary,string,text
+hs_source_object_id,Source Object ID,number,number
+hs_state_code,State/Region Code,string,text
+hs_suggested_contact_count,Suggested Contact Count,number,number
+hs_target_account,Target Account,enumeration,radio
+hs_target_account_probability,Target Account Probability,number,number
+hs_target_account_recommendation_snooze_time,Target Account Recommendation Snooze Time,datetime,date
+hs_target_account_recommendation_state,Target Account Recommendation State,enumeration,radio
+hs_task_label,Company task label,string,calculation_equation
+hs_tax_id,Tax Id,enumeration,checkbox
+hs_time_in_customer,Time in 'Cliente (Lifecycle Stage Pipeline)',number,calculation_read_time
+hs_time_in_evangelist,Time in 'Evangelizador (Lifecycle Stage Pipeline)',number,calculation_read_time
+hs_time_in_lead,Time in 'Lead (Lifecycle Stage Pipeline)',number,calculation_read_time
+hs_time_in_marketingqualifiedlead,Time in 'MQL (Lifecycle Stage Pipeline)',number,calculation_read_time
+hs_time_in_opportunity,Time in 'Oportunidad (Lifecycle Stage Pipeline)',number,calculation_read_time
+hs_time_in_other,Time in 'Otra (Lifecycle Stage Pipeline)',number,calculation_read_time
+hs_time_in_salesqualifiedlead,Time in 'SQL (Lifecycle Stage Pipeline)',number,calculation_read_time
+hs_time_in_subscriber,Time in 'Suscriptor (Lifecycle Stage Pipeline)',number,calculation_read_time
+hs_total_deal_value,Total open deal value,number,number
+hs_unique_creation_key,Unique creation key,string,text
+hs_updated_by_user_id,Updated by user ID,number,number
+hs_user_ids_of_all_notification_followers,User IDs of all notification followers,enumeration,checkbox
+hs_user_ids_of_all_notification_recipients,All company notification recipients,enumeration,checkbox
+hs_user_ids_of_all_notification_unfollowers,User IDs of all notification unfollowers,enumeration,checkbox
+hs_user_ids_of_all_owners,User IDs of all owners,enumeration,checkbox
+hs_v2_cumulative_time_in_customer,"Cumulative time in ""Cliente (Lifecycle Stage Pipeline)""",number,number
+hs_v2_cumulative_time_in_lead,"Cumulative time in ""Lead (Lifecycle Stage Pipeline)""",number,number
+hs_v2_cumulative_time_in_marketingqualifiedlead,"Cumulative time in ""MQL (Lifecycle Stage Pipeline)""",number,number
+hs_v2_cumulative_time_in_opportunity,"Cumulative time in ""Oportunidad (Lifecycle Stage Pipeline)""",number,number
+hs_v2_cumulative_time_in_other,"Cumulative time in ""Otra (Lifecycle Stage Pipeline)""",number,number
+hs_v2_cumulative_time_in_salesqualifiedlead,"Cumulative time in ""SQL (Lifecycle Stage Pipeline)""",number,number
+hs_v2_date_entered_current_stage,Date entered current stage,datetime,calculation_equation
+hs_v2_date_entered_customer,"Date entered ""Cliente (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_entered_lead,"Date entered ""Lead (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_entered_marketingqualifiedlead,"Date entered ""MQL (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_entered_opportunity,"Date entered ""Oportunidad (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_entered_other,"Date entered ""Otra (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_entered_salesqualifiedlead,"Date entered ""SQL (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_exited_customer,"Date exited ""Cliente (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_exited_lead,"Date exited ""Lead (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_exited_marketingqualifiedlead,"Date exited ""MQL (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_exited_opportunity,"Date exited ""Oportunidad (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_exited_other,"Date exited ""Otra (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_date_exited_salesqualifiedlead,"Date exited ""SQL (Lifecycle Stage Pipeline)""",datetime,date
+hs_v2_latest_time_in_customer,"Latest time in ""Cliente (Lifecycle Stage Pipeline)""",number,number
+hs_v2_latest_time_in_lead,"Latest time in ""Lead (Lifecycle Stage Pipeline)""",number,number
+hs_v2_latest_time_in_marketingqualifiedlead,"Latest time in ""MQL (Lifecycle Stage Pipeline)""",number,number
+hs_v2_latest_time_in_opportunity,"Latest time in ""Oportunidad (Lifecycle Stage Pipeline)""",number,number
+hs_v2_latest_time_in_other,"Latest time in ""Otra (Lifecycle Stage Pipeline)""",number,number
+hs_v2_latest_time_in_salesqualifiedlead,"Latest time in ""SQL (Lifecycle Stage Pipeline)""",number,number
+hs_v2_time_in_current_stage,Time in current stage,datetime,calculation_equation
+hs_was_imported,Performed in an import,bool,booleancheckbox
+hubspot_owner_assigneddate,Owner assigned date,datetime,date
+hubspot_owner_id,Company owner,enumeration,select
+hubspot_team_id,HubSpot Team,enumeration,select
+hubspotscore,HubSpot Score,number,number
+industry,Industry,enumeration,select
+is_public,Is Public,bool,booleancheckbox
+kickoff_date,Kickoff Date,datetime,date
+lifecyclestage,Lifecycle Stage,enumeration,radio
+linkedin_company_page,LinkedIn Company Page,string,text
+linkedinbio,LinkedIn Bio,string,text
+mawi_first_payment_failure_date,Mawi first payment failure date,date,date
+mawi_internal_id,Mawi Internal ID,number,number
+mawi_invoice_payment_link,Mawi invoice payment link,string,text
+mawi_payment_failure_date,Mawi payment failure date,date,date
+mawi_payment_status,Mawi payment status,string,text
+mawi_stripe_mrr,Stripe MRR,number,number
+mawi_suspended_at_date,Mawi suspended at date,date,date
+name,Company name,string,text
+notes_last_contacted,Last Contacted,datetime,date
+notes_last_updated,Last Activity Date,datetime,date
+notes_next_activity_date,Next Activity Date,datetime,date
+num_associated_contacts,Number of Associated Contacts,number,calculation_rollup
+num_associated_deals,Number of Associated Deals,number,calculation_rollup
+num_contacted_notes,Number of times contacted,number,number
+num_conversion_events,Number of Form Submissions,number,number
+num_conversion_events_cardinality_sum_d095f14b,num_conversion_events_cardinality_sum_d095f14b,number,text
+num_notes,Number of Sales Activities,number,number
+numberofemployees,Number of Employees,number,number
+onboarding_completed,Onboarding Completed,datetime,date
+owneremail,HubSpot Owner Email,string,text
+ownername,HubSpot Owner Name,string,text
+phone,Phone Number,string,phonenumber
+rb2b_captured_at,RB2B Captured At,date,date
+rb2b_captured_url,RB2B Captured URL,string,text
+rb2b_source,RB2B Source,bool,booleancheckbox
+recent_conversion_date,Recent Conversion Date,datetime,date
+recent_conversion_date_timestamp_latest_value_72856da1,recent_conversion_date_timestamp_latest_value_72856da1,datetime,text
+recent_conversion_event_name,Recent Conversion,string,text
+recent_conversion_event_name_timestamp_latest_value_66c820bf,recent_conversion_event_name_timestamp_latest_value_66c820bf,datetime,text
+recent_deal_amount,Recent Deal Amount,number,number
+recent_deal_close_date,Recent Deal Close Date,datetime,date
+segment_group_id,Segment Group ID,string,text
+segmentacion_cs,Segmentación CS,enumeration,select
+state,State/Region,string,text
+stripe_customer_id,Stripe customer ID,string,text
+stripe_next_payment_date,Stripe next payment date,date,date
+stripe_payment_interval,Stripe payment interval,string,text
+stripe_subscription_status,Stripe subscription status,enumeration,select
+timezone,Time Zone,string,text
+total_money_raised,Total Money Raised,string,text
+total_revenue,Total Revenue,number,calculation_rollup
+twitterbio,Twitter Bio,string,text
+twitterfollowers,Twitter Followers,number,number
+twitterhandle,Twitter Handle,string,text
+type,Type,enumeration,radio
+vendedor,Vendedor,string,text
+web_technologies,Web Technologies,enumeration,checkbox
+website,Website URL,string,text
+zip,Postal Code,string,text
