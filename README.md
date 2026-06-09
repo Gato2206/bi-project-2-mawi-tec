@@ -54,7 +54,10 @@ Diseñar e implementar una solución integral de Inteligencia de Negocios median
 
 ## Arquitectura de la Solución
 
+La solución implementada sigue la siguiente arquitectura:
+
 Fuentes Operacionales
+(Stripe, HubSpot, ChartMogul, PostHog y Help Scout)
 ↓
 Proceso ETL (Python)
 ↓
@@ -63,37 +66,17 @@ Modelo Dimensional (Esquema Estrella)
 Power BI
 ↓
 Dashboards Analíticos
+↓
+Toma de Decisiones
 
 ---
 
-## Fuentes de Datos
-
-### ChartMogul
-
-Información de:
-
-- Clientes
-- MRR
-- ARR
-- Estado de clientes
-- Churn
-
-### HubSpot
-
-Información de:
-
-- Deals
-- Pipeline comercial
-- Empresas
-- Oportunidades
-
-### PostHog
-
-Información de:
-
-- Eventos de uso
-- Actividad de usuarios
-- Interacciones con la plataforma
+### Fuentes de Datos
+- ChartMogul
+- HubSpot
+- PostHog
+- Stripe
+- Help Scout
 
 ---
 
@@ -142,67 +125,42 @@ El modelo fue diseñado bajo un esquema estrella compuesto por:
 
 ---
 
-## Estructura del Repositorio
+## Ejecución del ETL
 
-```text
-Proyecto_Mawi_BI/
+## Instrucciones de Ejecución
+
+1. Clonar el repositorio.
+
+2. Instalar las dependencias necesarias:
+
+ pip install pandas numpy requests
+
+3. Configurar las credenciales de acceso a las APIs en el archivo .env.
+
+4. Ejecutar el proceso ETL:
+
+   python transform_etl.py
+
+5. Verificar los archivos generados en la carpeta processed.
+
+6. Abrir el archivo Power BI para visualizar los dashboards.
+
+---
+## Estructura del Repositorio
 
 Proyecto_Mawi_BI/
 
 ├── README.md
-├── data/
-│   ├── raw/
-│   └── processed/
-├── etl/
+├── raw/
+├── processed/
+├── scripts/
 ├── docs/
+├── logs/
+├── transform_etl.py
 ├── dashboard/
 ├── informe/
 ├── presentacion/
 └── evidencia/
-
----
-
-## Ejecución del ETL
-
-### 1. Clonar el repositorio
-
-```bash
-git clone <url-del-repositorio>
-```
-
-### 2. Instalar dependencias
-
-```bash
-pip install pandas numpy requests
-```
-
-### 3. Configurar variables de entorno
-
-```text
-.env
-```
-
-### 4. Ejecutar extracción
-
-```bash
-python extract_chartmogul.py
-python extract_hubspot.py
-python extract_posthog.py
-```
-
-### 5. Ejecutar transformación
-
-```bash
-python transform_etl.py
-```
-
-### 6. Verificar salida
-
-Los archivos dimensionales generados se almacenan en:
-
-```text
-data/processed/
-```
 
 ---
 
@@ -233,15 +191,4 @@ La solución permite:
 - Evaluar el uso de la plataforma.
 - Dar seguimiento a indicadores estratégicos del negocio.
 
----
 
-## Repositorio
-
-Este repositorio contiene todos los artefactos necesarios para reproducir la solución desarrollada:
-
-- Código ETL
-- Datos procesados
-- Documentación
-- Dashboard
-- Informe final
-- Presentación
