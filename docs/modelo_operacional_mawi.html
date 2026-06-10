@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelo Operacional — Mawi ETL</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #F7F8FA; padding: 32px 24px; color: #1A1A1A; }
+
+  h1 { font-size: 22px; color: #1A4A8A; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #777; margin-bottom: 32px; }
+
+  .layer { margin-bottom: 0; }
+  .layer-label {
+    font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase;
+    color: #888; padding: 4px 12px; margin-bottom: 5px;
+  }
+  .layer-body {
+    border: 1.5px solid #D8E2EF; border-radius: 10px;
+    padding: 16px; background: #fff;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .node-row { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .node {
+    border-radius: 8px; padding: 10px 16px; min-width: 115px;
+    display: flex; flex-direction: column; gap: 3px;
+    border: 1.5px solid transparent;
+  }
+  .node .n-title { font-size: 13px; font-weight: 700; }
+  .node .n-sub   { font-size: 10px; opacity: .75; }
+
+  .c-purple { background:#EEEDFE; border-color:#9B93EE; color:#2D2680; }
+  .c-orange { background:#FFF0ED; border-color:#FFB39A; color:#7A2210; }
+  .c-blue   { background:#EBF2FA; border-color:#90BEE0; color:#0C3D6E; }
+  .c-green  { background:#E8F5EE; border-color:#80C9A0; color:#0A4A28; }
+  .c-teal   { background:#E6F4F4; border-color:#7ACACA; color:#094444; }
+  .c-gold   { background:#FEF8E7; border-color:#E8C84A; color:#5A4000; }
+  .c-red    { background:#FAECE7; border-color:#F4A48A; color:#6B1E0A; }
+
+  .hint { font-size: 11px; color: #888; text-align: center; }
+
+  .etl-row { display: flex; gap: 12px; align-items: stretch; }
+  .etl-block {
+    flex: 1; border-radius: 8px; padding: 12px 14px;
+    border: 1.5px solid #D8E2EF; background: #FAFBFC;
+  }
+  .etl-block .eb-title { font-size: 13px; font-weight: 700; margin-bottom: 7px; }
+  .etl-block .eb-item  {
+    font-size: 11px; color: #555; margin-bottom: 4px;
+    padding-left: 12px; position: relative;
+  }
+  .etl-block .eb-item::before { content: "›"; position: absolute; left: 0; color: #AAA; }
+  .etl-e { border-color:#9B93EE; } .etl-e .eb-title { color:#2D2680; }
+  .etl-t { border-color:#80C9A0; } .etl-t .eb-title { color:#0A4A28; }
+  .etl-l { border-color:#90BEE0; } .etl-l .eb-title { color:#0C3D6E; }
+
+  .arr {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 8px 0;
+  }
+  .arr .line { width: 2px; height: 20px; background: #C5D0DE; }
+  .arr .tip  { width:0; height:0;
+    border-left:7px solid transparent;
+    border-right:7px solid transparent;
+    border-top:9px solid #C5D0DE;
+  }
+  .arr .lbl  { font-size:10px; color:#AAA; margin-top:3px; }
+
+  .traz-row { display: flex; gap: 10px; margin-top: 10px; }
+  .traz-block {
+    flex:1; border-radius:8px; padding:10px 12px;
+    border:1.5px dashed #C5D0DE; background:#fff;
+  }
+  .traz-block .tb-title { font-size:12px; font-weight:700; color:#555; margin-bottom:5px; }
+  .traz-block .tb-item  {
+    font-size:11px; color:#888; margin-bottom:3px;
+    padding-left:12px; position:relative;
+  }
+  .traz-block .tb-item::before { content:"•"; position:absolute; left:0; }
+
+  .div-row { display:flex; align-items:center; gap:10px; margin:20px 0 8px; }
+  .div-line { flex:1; height:1px; background:#DDD; }
+  .div-text { font-size:10px; color:#AAA; white-space:nowrap; letter-spacing:.07em; text-transform:uppercase; font-weight:700; }
+
+  .etl-arrows { display:flex; align-items:center; justify-content:center; padding:0 4px; }
+  .etl-arrow  { width:20px; height:20px; }
+</style>
+</head>
+<body>
+
+<h1>Modelo Operacional — ETL & BI</h1>
+<p class="subtitle">Proyecto Mawi · Junio 2026 · Arquitectura de datos con herramientas gratuitas</p>
+
+<!-- CAPA 1 -->
+<div class="layer">
+  <div class="layer-label">Capa 1 — Fuentes de datos externas</div>
+  <div class="layer-body">
+    <div class="node-row">
+      <div class="node c-purple"><span class="n-title">Stripe</span><span class="n-sub">Pagos · Suscripciones · Add-ons</span></div>
+      <div class="node c-orange"><span class="n-title">HubSpot</span><span class="n-sub">Pipeline comercial</span></div>
+      <div class="node c-blue"><span class="n-title">ChartMogul</span><span class="n-sub">MRR · Churn · LTV</span></div>
+      <div class="node c-green"><span class="n-title">PostHog</span><span class="n-sub">Eventos de uso</span></div>
+      <div class="node c-teal"><span class="n-title">Help Scout</span><span class="n-sub">Tickets de soporte</span></div>
+    </div>
+    <p class="hint">Extracción vía <strong>API REST</strong> (principal) &nbsp;|&nbsp; <strong>CSV export</strong> (respaldo)</p>
+  </div>
+</div>
+
+<div class="arr" style="align-self:center;align-items:center;">
+  <div class="line"></div><div class="tip"></div><div class="lbl">raw data</div>
+</div>
+
+<!-- CAPA 2 -->
+<div class="layer">
+  <div class="layer-label">Capa 2 — Proceso ETL (Python · script local)</div>
+  <div class="layer-body">
+    <div class="etl-row">
+      <div class="etl-block etl-e">
+        <div class="eb-title">E — Extract</div>
+        <div class="eb-item">Llamadas a cada API con token (.env)</div>
+        <div class="eb-item">Paginación automática</div>
+        <div class="eb-item">Fallback a CSV si API no responde</div>
+        <div class="eb-item">Log de registros extraídos</div>
+      </div>
+      <div class="etl-arrows">
+        <svg class="etl-arrow" viewBox="0 0 20 20"><path d="M4 10h12M12 6l4 4-4 4" stroke="#C5D0DE" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="etl-block etl-t">
+        <div class="eb-title">T — Transform</div>
+        <div class="eb-item">Normalizar fechas a UTC</div>
+        <div class="eb-item">Centavos Stripe → dólares</div>
+        <div class="eb-item">Caída de eventos PostHog (30d vs 30d ant.)</div>
+        <div class="eb-item">Unificar clientes por email</div>
+        <div class="eb-item">Calcular score de riesgo de churn</div>
+      </div>
+      <div class="etl-arrows">
+        <svg class="etl-arrow" viewBox="0 0 20 20"><path d="M4 10h12M12 6l4 4-4 4" stroke="#C5D0DE" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+      </div>
+      <div class="etl-block etl-l">
+        <div class="eb-title">L — Load</div>
+        <div class="eb-item">Escribir a Google Sheets (gspread)</div>
+        <div class="eb-item">Una pestaña por fuente + vista unificada</div>
+        <div class="eb-item">Sobreescritura completa por ejecución</div>
+        <div class="eb-item">Log de filas cargadas y timestamp</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="arr" style="align-items:center;">
+  <div class="line"></div><div class="tip"></div><div class="lbl">datos limpios y unificados</div>
+</div>
+
+<!-- CAPA 3 -->
+<div class="layer">
+  <div class="layer-label">Capa 3 — Almacenamiento centralizado</div>
+  <div class="layer-body">
+    <div class="node-row">
+      <div class="node c-gold" style="min-width:260px; align-items:center; text-align:center;">
+        <span class="n-title">Google Sheets</span>
+        <span class="n-sub">stripe_data · hubspot_data · chartmogul_data · posthog_data · helpscout_data · clientes_unificados</span>
+      </div>
+    </div>
+    <p class="hint">Gratuito · Conector nativo con Power BI · Acceso compartido por link</p>
+  </div>
+</div>
+
+<div class="arr" style="align-items:center;">
+  <div class="line"></div><div class="tip"></div><div class="lbl">conexión directa</div>
+</div>
+
+<!-- CAPA 4 -->
+<div class="layer">
+  <div class="layer-label">Capa 4 — Business Intelligence · Power BI</div>
+  <div class="layer-body">
+    <div class="node-row">
+      <div class="node c-red" style="min-width:130px; text-align:center;">
+        <span class="n-title">Retención</span>
+        <span class="n-sub">Churn · Score de riesgo · Señales tempranas</span>
+      </div>
+      <div class="node c-green" style="min-width:130px; text-align:center;">
+        <span class="n-title">Trayectoria</span>
+        <span class="n-sub">MRR actual · Proyección · Brecha a meta dic.</span>
+      </div>
+      <div class="node c-purple" style="min-width:130px; text-align:center;">
+        <span class="n-title">Producto</span>
+        <span class="n-sub">Features · Activación · Uso por cohorte</span>
+      </div>
+      <div class="node c-teal" style="min-width:130px; text-align:center;">
+        <span class="n-title">Soporte</span>
+        <span class="n-sub">Tickets · Resolución · Correlación churn</span>
+      </div>
+    </div>
+    <p class="hint">Power BI — gratuito · actualización manual on-demand</p>
+  </div>
+</div>
+
+<!-- TRAZABILIDAD -->
+<div class="div-row">
+  <div class="div-line"></div>
+  <div class="div-text">Trazabilidad y Replicabilidad</div>
+  <div class="div-line"></div>
+</div>
+
+<div class="traz-row">
+  <div class="traz-block">
+    <div class="tb-title">📁 GitHub</div>
+    <div class="tb-item">Código versionado</div>
+    <div class="tb-item">Historial de cambios</div>
+  </div>
+  <div class="traz-block">
+    <div class="tb-title">🔑 .env</div>
+    <div class="tb-item">Credenciales aisladas</div>
+    <div class="tb-item">requirements.txt fijo</div>
+  </div>
+  <div class="traz-block">
+    <div class="tb-title">📋 Logging</div>
+    <div class="tb-item">Timestamp por ejecución</div>
+    <div class="tb-item">Filas extraídas / cargadas</div>
+  </div>
+  <div class="traz-block">
+    <div class="tb-title">📖 README</div>
+    <div class="tb-item">Pasos de instalación</div>
+    <div class="tb-item">Cómo ejecutar el ETL</div>
+  </div>
+</div>
+
+</body>
+</html>
