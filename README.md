@@ -127,24 +127,73 @@ El modelo fue diseñado bajo un esquema estrella compuesto por:
 
 ## Ejecución del ETL
 
-## Instrucciones de Ejecución
+## Instrucciones para ejecutar el ETL
+1. Preparar el entorno
 
-1. Clonar el repositorio.
+Instalar Python 3.14 o superior.
 
-2. Instalar las dependencias necesarias:
+Abrir una terminal y ejecutar:
 
- pip install pandas numpy requests
+pip install pandas requests
+2. Organizar los archivos
 
-3. Configurar las credenciales de acceso a las APIs en el archivo .env.
+Verificar que la estructura del proyecto sea la siguiente:
 
-4. Ejecutar el proceso ETL:
+BI_project
+│
+├── transform_etl.py
+│
+├── raw
+│   ├── hubspot_contacts.json
+│   ├── hubspot_companies.json
+│   ├── hubspot_deals_enriched.json
+│   ├── chartmogul_customers.json
+│   └── posthog_recent_events.json
+│
+├── processed
+├── docs
+├── logs
+└── scripts
 
-   python transform_etl.py
+Los archivos JSON dentro de la carpeta raw corresponden a los datos extraídos desde las APIs de HubSpot, ChartMogul y PostHog.
 
-5. Verificar los archivos generados en la carpeta processed.
+3. Ejecutar el proceso ETL
 
-6. Abrir el archivo Power BI para visualizar los dashboards.
+Ubicarse en la carpeta principal del proyecto y ejecutar:
 
+python transform_etl.py
+4. Verificar la ejecución
+
+Si el proceso finaliza correctamente, en la consola aparecerá el mensaje:
+
+ETL COMPLETADO
+5. Revisar los resultados
+
+Los archivos generados se almacenarán automáticamente en las siguientes carpetas:
+
+processed/
+
+dim_cliente.csv
+dim_empresa.csv
+dim_estado_cliente.csv
+dim_evento.csv
+dim_pais.csv
+dim_pipeline.csv
+dim_tiempo.csv
+fact_pipeline.csv
+fact_product_usage.csv
+fact_retention.csv
+
+docs/
+
+transformation_mapping.csv
+
+logs/
+
+etl_log.csv
+6. Utilizar los datos
+
+Los archivos ubicados en la carpeta processed pueden ser utilizados directamente para construir el modelo dimensional y los dashboards analíticos en Power BI, Tableau u otra herramienta de visualización.
 ---
 ## Estructura del Repositorio
 
