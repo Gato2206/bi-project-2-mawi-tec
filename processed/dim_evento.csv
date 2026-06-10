@@ -1,0 +1,49 @@
+﻿sk_evento,evento
+1,Mobile App Activity
+2,$web_vitals
+3,$groupidentify
+4,$pageview
+5,$set
+6,$pageleave
+7,Inspection Report Viewed
+8,$autocapture
+9,Inspections Viewed
+10,Inspection Activity
+11,Inspection Items Viewed
+12,Inspection Item Activity
+13,Inspection Item Viewed
+14,Budget Viewed
+15,Project Activity
+16,$exception
+17,$identify
+18,User Signed In
+19,Public Change Order Viewed
+20,Change Orders Viewed
+21,$feature_flag_called
+22,$ai_generation_summary
+23,$rageclick
+24,Subscription Lifecycle
+25,survey dismissed
+26,survey sent
+27,survey shown
+28,Home Dashboard Viewed
+29,Home Dashboard Activity
+30,Expense Control Activity
+31,$ai_generation
+32,RFIs Viewed
+33,RFI Activity
+34,Documents Viewed
+35,Purchase Order Activity
+36,Budget Line Assignment Used
+37,Material Item Activity
+38,$ai_trace_summary
+39,Report Viewed
+40,Budget Report Viewed
+41,Category Assignment Used
+42,Project Task Activity
+43,Directory Activity
+44,Material Request Activity
+45,Invoice Activity
+46,Request Quote Activity
+47,Advance Control Activity
+48,Material Catalog Activity

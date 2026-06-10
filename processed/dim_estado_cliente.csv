@@ -1,0 +1,5 @@
+﻿sk_estado_cliente,estado_cliente
+1,Cancelled
+2,Active
+3,Past Due
+4,New Lead
